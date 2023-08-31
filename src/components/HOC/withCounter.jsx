@@ -7,11 +7,15 @@ function withCounter(OriginalCounter) {
         };
 
         increment = (inc) => {
-            this.setState((prevState) => ({count: parseInt(prevState.count) + inc}));
+            console.log('At withCounter increment');
+            
+            this.setState((prevState) => ({count: parseInt(prevState.count) + parseInt(inc)}));
         };
 
         render() {
+            console.log('At withCounter');
             let {count} = this.state;
+
             return (
                 <OriginalCounter count={count} increment={this.increment} />
             );
